@@ -1,4 +1,22 @@
-# PetClinic Custom Otel Instrumentation
+# Open Telemetry Instrumentation Workshop with PetClinic Sample Application
+
+The goal is to walk through the basic steps to configure the following components of the Splunk Observability platform:
+
+Infrastructure Monitoring (IM)
+Zero Configuration Auto Instrumentation for Java (APM)
+Database Query Performance
+AlwaysOn Profiling
+Splunk Real User Monitoring (RUM)
+RUM spans to APM spans
+Custom Instrumentation
+
+We will also show the steps about how to clone (download) a sample Java application (Spring PetClinic), as well as how to compile, package and run the application.
+
+Once the application is up and running, we will instantly start seeing metrics and traces via the Zero Configuration Auto Instrumentation for Java that will be used by the Splunk APM product.
+
+After that, we will instrument the PetClinic’s end user interface (HTML pages rendered by the application) with the Splunk OpenTelemetry Javascript Libraries (RUM) that will generate RUM traces around all the individual clicks and page loads executed by an end user.
+
+Finally, we will demonstrate how to add custom span tags to some traces that will aid in troubleshooting issues reducing MTTD/MTTR.
 
 ## [Lab 1: Install the Open Telemetry Collector](install-otel-collector.md)
 

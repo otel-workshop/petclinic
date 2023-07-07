@@ -1,4 +1,4 @@
-# Lab: Reduce MTTD with Custom Attribution (Span Tagging)
+# Lab 4: Reduce MTTD with Custom Attribution (Span Tagging)
 
 ## What are span attributes?
 

@@ -1,25 +1,32 @@
 # Lab 3: Real User Monitoring with Browser Instrumentation
 
-## Enable RUM
+## Generate RUM Instrumentation Javascript 
 
 For the Real User Monitoring (RUM) instrumentation, we will add
-the [Open Telemetry Javascript](https://github.com/signalfx/splunk-otel-js-web) snippet in the pages, we will use the
-wizard again **Data Management → Add Integration → RUM Instrumentation → Browser Instrumentation**.
+the [Open Telemetry Javascript](https://github.com/signalfx/splunk-otel-js-web) snippet in the GUI pages. 
+
+Choose one of following ways to generate the JS snippet
+
+1. We can use the wizard again **Data Management → Add Integration → Monitor User Experience tab → Browser Instrumentation**.
 
 Select the preconfigured **RUM ACCESS TOKEN** from the dropdown, click **Next**. Enter **App name** and **Environment** using the
 following syntax:
 
 * <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-service - replacing **[hostname]** with your actual hostname.
-* <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-env - replacing **[hostname]** with your actual hostname.
+* <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic - replacing **[hostname]** with your actual hostname.
 
 Then you’ll need to select the workshop RUM token and define the application and environment names. The wizard will then
 show a snipped of HTML code that needs to be place at the top at the pages in the **&lt;head&gt;** section. In this example we are
 using:
 
 * Application Name: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-service
-* Environment: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-env
+* Environment: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic
 
-Copy the generated code snippet in the wizard or copy and edit the snippet below accordingly. You need to
+Copy the generated code snippet in the wizard
+
+OR
+
+2. Alternatively, copy and edit the snippet below accordingly. You need to
 replace **&lt;REALM&gt;**, **&lt;RUM_ACCESS_TOKEN&gt;** and **&lt;hostname&gt;** with the actual values.
 
 ```cmd
@@ -34,6 +41,11 @@ SplunkRum.init({
 </script>
 ```
 
+> **_NOTE:_**  The **application name** and **environment** must match exactly the values we used in the APM configuration. 
+> These two values are used by the Splunk Observablity Cloud to correlate Frontend User Sessions to Backend APM Traces.
+
+## Enable RUM
+
 The Spring PetClinic application uses a single HTML page as the "layout" page, that is reused across all pages of the
 application. This is the perfect location to insert the Splunk RUM Instrumentation Library as it will be loaded in all
 pages automatically
@@ -44,8 +56,9 @@ Let’s then edit the layout page:
 vi src/main/resources/templates/fragments/layout.html
 ```
 
-Next, insert the snippet we generated above in the <mark style="background-color: #FDFDC9">&lt;head&gt;</mark> section of the page. Now we need to rebuild the application
-and run it again:
+So, insert the snippet we generated above in the <mark style="background-color: #FDFDC9">&lt;head&gt;</mark> section of the layout page. 
+
+Now we need to rebuild the application and run it again:
 
 ## Rebuild PetClinic
 

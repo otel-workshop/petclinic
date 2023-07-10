@@ -10,19 +10,14 @@ Choose one of following ways to generate the JS snippet
 1. We can use the wizard again **Data Management → Add Integration → Monitor User Experience tab → Browser Instrumentation**.
 
 Select the preconfigured **RUM ACCESS TOKEN** from the dropdown, click **Next**. Enter **App name** and **Environment** using the
-following syntax:
+following syntax (replacing **[hostname]** with your actual hostname):
 
-* <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-service - replacing **[hostname]** with your actual hostname.
-* <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic - replacing **[hostname]** with your actual hostname.
+* **App Name**: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-service
+* **Environment**: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic
 
 Then you’ll need to select the workshop RUM token and define the application and environment names. The wizard will then
-show a snipped of HTML code that needs to be place at the top at the pages in the **&lt;head&gt;** section. In this example we are
-using:
-
-* Application Name: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-service
-* Environment: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic
-
-Copy the generated code snippet in the wizard
+show a snipped of HTML code that needs to be place at the top at the pages in the **&lt;head&gt;** section. 
+Copy the generated code snippet in the wizard.
 
 OR
 

@@ -36,7 +36,7 @@ SplunkRum.init({
     beaconUrl: "https://rum-ingest.<REALM>.signalfx.com/v1/rum",
     rumAuth: "<RUM_ACCESS_TOKEN>",
     app: "<hostname>-petclinic-service",
-    environment: "<hostname>-petclinic-env"
+    environment: "<hostname>-petclinic"
     });
 </script>
 ```

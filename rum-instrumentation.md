@@ -73,3 +73,7 @@ PetClinic URLs showing up in the UI.
 
 When you drill down into a RUM trace you will see a link to APM in the spans. Clicking on the trace ID will take you to
 the corresponding APM trace for the current RUM trace.
+
+## Next Step
+
+[Go back to Main Page and Proceed to Lab 4](README.md)

@@ -81,3 +81,7 @@ java \
 You can now visit the Splunk APM UI and examine the application components, traces, profiling, DB Query performance and metrics.
 
 Once your validation is complete you can stop the application by pressing Ctrl-C.
+
+## Next Step
+
+[Go back to Main Page and Proceed to Lab 3](README.md)

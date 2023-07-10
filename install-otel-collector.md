@@ -44,6 +44,16 @@ Restart the collector
 sudo systemctl restart splunk-otel-collector
 ```
 
+Check that the collector service is up and running
+
+```cmd
+sudo systemctl status splunk-otel-collector
+```
+
 Once the install is completed, you can navigate to the **Hosts with agent installed** dashboard to see the data from your host, Dashboards → Hosts with agent installed.
 
 Use the dashboard filter and select **host.name** and type or select the hostname of your virtual machine. Once you see data flowing for your host, we are then ready to get started with the APM component.
+
+## Next Step
+
+[Go back to Main Page and Proceed to Lab 2](README.md)

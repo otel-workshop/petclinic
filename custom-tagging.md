@@ -1,4 +1,4 @@
-# Lab 4: Reduce MTTD with Custom Attribution (Span Tagging)
+# Lab 4: Reduce MTTD/MTTR with Custom Attribution (Span Tagging)
 
 ## What are span attributes?
 
@@ -56,12 +56,23 @@ public ModelAndView showOwner(@PathVariable("ownerId") int ownerId) {
 ```
 
 Next, run the maven command to format and compile/build/package PetClinic
+
 ```cmd
 ./mvnw spring-javaformat:apply
 ./mvnw package -Dmaven.test.skip=true
 ```
 
 Restart the PetClinic application.
+
+```cmd
+java \
+-Dotel.service.name=$(hostname)-petclinic-service \
+-Dsplunk.profiler.enabled=true \
+-Dsplunk.profiler.memory.enabled=true \
+-Dsplunk.metrics.enabled=true \
+-Dotel.resource.attributes=deployment.environment=$(hostname)-petclinic,version=0.314 \
+-jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
+```
 
 Go to the traces for the /owners/{owner-id} endpoint in your observability backend and find the custom attributes added.
 

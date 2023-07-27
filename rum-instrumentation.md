@@ -17,7 +17,7 @@ Copy the generated JS code snippet.
 OR
 
 2. Alternatively, copy and edit the JS snippet below accordingly. You need to
-replace **&lt;REALM&gt;**, **&lt;RUM_ACCESS_TOKEN&gt;** and **&lt;hostname&gt;** with the actual values.
+replace **&lt;REALM&gt;**, **&lt;RUM_ACCESS_TOKEN&gt;**, **&lt;REPLACE_WITH_APP_NAME&gt;** and **&lt;REPLACE_WITH_ENV_NAME&gt;** with the actual values.
 
 ```cmd
 <script src="https://cdn.signalfx.com/o11y-gdi-rum/latest/splunk-otel-web.js" crossorigin="anonymous"></script>

@@ -26,18 +26,23 @@ configured to send data to multiple backends. It is frequently conveniently bund
 infrastructure) metrics and the ability to automatically download and apply auto instrumentation to Java, .Net
 applications running on the same host.
 
-## [Lab 2: APM Zero Configuration Auto Instrumentation for Java](apm-instrumentation.md)
+## [Lab 2: APM Zero Configuration Auto Instrumentation for Java](sample-app-setup.md)
 
 In this lab, we will walk through the Java auto instrumentation for Pet Clinic sample application. We will see how APM
 traces are captured in full fidelity including calls to database.
 
-## [Lab 3: Real User Monitoring Instrumentation for Browser](rum-instrumentation.md)
+## [Lab 3: APM System Metrics and Profiling for Java](apm-instrumentation.md)
+
+In this lab, we will walk through the Java auto instrumentation for Pet Clinic sample application. We will see how APM
+traces are captured in full fidelity including calls to database.
+
+## [Lab 4: Real User Monitoring Instrumentation for Browser](rum-instrumentation.md)
 
 In this lab, we will continue with the instrumentation for Pet Clinic sample application. We will add Open Telemetry
 Javascript to monitor the frontend (GUI) pages and see how we can track entire user journeys in full fidelity and how
 they are automatically connected to APM traces for end to end visibility.
 
-## [Lab 4: Reduce MTTD with Custom Attribution (Span Tagging)](custom-tagging.md)
+## [Lab 5: Reduce MTTD with Custom Attribution (Span Tagging)](custom-tagging.md)
 
 This lab walks through adding custom span tags to the petclinic application. You can use this to identify a spike in the
 throughput of a certain enterprise customer, or the user suffering the highest latency, or to pinpoint the database

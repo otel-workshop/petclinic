@@ -1,4 +1,4 @@
-# Lab 3: Real User Monitoring with Browser Instrumentation
+# Lab 4: Real User Monitoring with Browser Instrumentation
 
 ## Generate RUM Instrumentation Javascript 
 
@@ -9,19 +9,14 @@ Choose one of following ways to generate the JS snippet
 
 1. We can use the wizard again **Data Management → Add Integration → Monitor User Experience tab → Browser Instrumentation**.
 
-Select the preconfigured **RUM ACCESS TOKEN** from the dropdown, click **Next**. Enter **App name** and **Environment** using the
-following syntax (replacing **[hostname]** with your actual hostname):
+Select the preconfigured **RUM ACCESS TOKEN** from the dropdown, click **Next**. Enter **App name** and **Environment** with the values already chosen in the previous lab.
 
-* **App Name**: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic-service
-* **Environment**: <mark style="background-color: #FDFDC9">[hostname]</mark>-petclinic
-
-Then you’ll need to select the workshop RUM token and define the application and environment names. The wizard will then
-show a snipped of HTML code that needs to be place at the top at the pages in the **&lt;head&gt;** section. 
-Copy the generated code snippet in the wizard.
+The wizard will then show a snipped of HTML code that needs to be place at the top at the pages in the **&lt;head&gt;** section. 
+Copy the generated JS code snippet.
 
 OR
 
-2. Alternatively, copy and edit the snippet below accordingly. You need to
+2. Alternatively, copy and edit the JS snippet below accordingly. You need to
 replace **&lt;REALM&gt;**, **&lt;RUM_ACCESS_TOKEN&gt;** and **&lt;hostname&gt;** with the actual values.
 
 ```cmd
@@ -30,14 +25,14 @@ replace **&lt;REALM&gt;**, **&lt;RUM_ACCESS_TOKEN&gt;** and **&lt;hostname&gt;**
 SplunkRum.init({
     beaconUrl: "https://rum-ingest.<REALM>.signalfx.com/v1/rum",
     rumAuth: "<RUM_ACCESS_TOKEN>",
-    app: "<hostname>-petclinic-service",
-    environment: "<hostname>-petclinic"
+    app: "REPLACE_WITH_APP_NAME",
+    environment: "REPLACE_WITH_ENV_NAME"
     });
 </script>
 ```
 
 > **_NOTE:_**  The **application name** and **environment** must match exactly the values we used in the APM configuration. 
-> These two values are used by the Splunk Observablity Cloud to correlate Frontend User Sessions to Backend APM Traces.
+> These two values are used by the Splunk Observability Cloud to correlate Frontend User Sessions to Backend APM Traces.
 
 ## Enable RUM
 
@@ -65,23 +60,24 @@ Run the <mark style="background-color: #FDFDC9">maven</mark> command to compile/
 
 ```cmd
 java \
--Dotel.service.name=$(hostname)-petclinic-service \
+-Dotel.service.name=$(APP_NAME) \
+-Dotel.resource.attributes=deployment.environment=$(ENV_NAME),version=0.314 \
 -Dsplunk.profiler.enabled=true \
 -Dsplunk.profiler.memory.enabled=true \
 -Dsplunk.metrics.enabled=true \
--Dotel.resource.attributes=deployment.environment=$(hostname)-petclinic,version=0.314 \
 -jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```
 
 Then let’s visit the application using a browser to generate real-user traffic http://&lt;VM_IP_ADDRESS&gt;:8080, now we
 should see RUM traces being reported.
 
-Let’s visit RUM and see some of the traces and metrics **Hamburger Menu → RUM** and you will see some of the Spring
-PetClinic URLs showing up in the UI.
+Let’s visit RUM to see the traces and metrics by clicking on **Hamburger Menu → RUM**.
+
+Click on the **App Name** to visit the fronend metrics page for that application. The in any chart (for example: **Page Load/Route Change Duration** chart), click on any URL of interest to go **Tag Spotlight** page filtered for that URL. You can then click on the **User Sessions** tab to visit the frontend traces for that application. Play around with the filters to filter down to the subset of traces you want to focus on. Then click on a particular User Session belonging to a specific user to examine it in more detail.
 
 When you drill down into a RUM trace you will see a link to APM in the spans. Clicking on the trace ID will take you to
 the corresponding APM trace for the current RUM trace.
 
 ## Next Step
 
-[Go back to Main Page and Proceed to Lab 4](README.md)
+[Go back to Main Page and Proceed to Lab 5](README.md)

@@ -33,13 +33,12 @@ traces are captured in full fidelity including calls to database.
 
 ## [Lab 3: APM System Metrics and Profiling for Java](apm-instrumentation.md)
 
-In this lab, we will walk through the Java auto instrumentation for Pet Clinic sample application. We will see how APM
-traces are captured in full fidelity including calls to database.
+In this lab, we will add system properties to enable production profiling of the petclinic application and metrics 
 
 ## [Lab 4: Real User Monitoring Instrumentation for Browser](rum-instrumentation.md)
 
 In this lab, we will continue with the instrumentation for Pet Clinic sample application. We will add Open Telemetry
-Javascript to monitor the frontend (GUI) pages and see how we can track entire user journeys in full fidelity and how
+Javascript instrumentation to monitor the frontend (GUI) pages and see how we can track entire user journeys in full fidelity and how
 they are automatically connected to APM traces for end to end visibility.
 
 ## [Lab 5: Reduce MTTD with Custom Attribution (Span Tagging)](custom-tagging.md)

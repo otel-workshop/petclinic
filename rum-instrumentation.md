@@ -73,7 +73,7 @@ should see RUM traces being reported.
 
 Let’s visit RUM to see the traces and metrics by clicking on **Hamburger Menu → RUM**.
 
-Click on the **App Name** to visit the fronend metrics page for that application. The in any chart (for example: **Page Load/Route Change Duration** chart), click on any URL of interest to go **Tag Spotlight** page filtered for that URL. You can then click on the **User Sessions** tab to visit the frontend traces for that application. Play around with the filters to filter down to the subset of traces you want to focus on. Then click on a particular User Session belonging to a specific user to examine it in more detail.
+Click on the **App Name** to visit the frontend metrics page for that application. The in any chart (for example: **Page Load/Route Change Duration** chart), click on any URL of interest to go **Tag Spotlight** page filtered for that URL. You can then click on the **User Sessions** tab to visit the frontend traces for that application. Play around with the filters to filter down to the subset of traces you want to focus on. Then click on a particular User Session belonging to a specific user to examine it in more detail.
 
 When you drill down into a RUM trace you will see a link to APM in the spans. Clicking on the trace ID will take you to
 the corresponding APM trace for the current RUM trace.

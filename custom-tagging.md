@@ -66,11 +66,11 @@ Restart the PetClinic application.
 
 ```cmd
 java \
--Dotel.service.name=$(hostname)-petclinic-service \
+-Dotel.service.name=$APP_NAME \
+-Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
 -Dsplunk.profiler.enabled=true \
 -Dsplunk.profiler.memory.enabled=true \
 -Dsplunk.metrics.enabled=true \
--Dotel.resource.attributes=deployment.environment=$(hostname)-petclinic,version=0.314 \
 -jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```
 

@@ -8,8 +8,8 @@ Make sure the application is stopped and update the startup command to enable me
 
 ```cmd
 java \
--Dotel.service.name=$(APP_NAME) \
--Dotel.resource.attributes=deployment.environment=$(ENV_NAME),version=0.314 \
+-Dotel.service.name=$APP_NAME \
+-Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
 -Dsplunk.profiler.enabled=true \
 -Dsplunk.profiler.memory.enabled=true \
 -Dsplunk.metrics.enabled=true \

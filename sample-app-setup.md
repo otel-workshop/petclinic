@@ -50,8 +50,8 @@ At a minimum, you should specify the **deployment.environment** resource attribu
 
 ```cmd
 java \
--Dotel.service.name=$(APP_NAME) \
--Dotel.resource.attributes=deployment.environment=$(ENV_NAME),version=0.314 \
+-Dotel.service.name=$APP_NAME \
+-Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
 -jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```
 

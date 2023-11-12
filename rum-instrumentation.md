@@ -1,4 +1,4 @@
-# Lab 4: Real User Monitoring with Browser Instrumentation
+# Lab 3: Real User Monitoring with Browser Instrumentation
 
 ## Generate RUM Instrumentation Javascript 
 

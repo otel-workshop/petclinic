@@ -44,3 +44,7 @@ throughput of a certain enterprise customer, or the user suffering the highest l
 shard generating the most errors, which will demonstrate how adding appropriate span tags can reduce troubleshooting
 times (MTTD) considerably.
 
+##[Lab 5: Configure application logs and forward them with Otel Collector](log-instrumentation.md)
+
+In this lab, we will write logs to a file in the filesystem and configure the Splunk OpenTelemetry Collector to read (tail) that log file and report the information to the Splunk Observability Platform.
+

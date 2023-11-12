@@ -1,4 +1,4 @@
-# Lab 3: APM System Metrics and Profiling for Java
+# Lab 2.1: APM System Metrics and Profiling for Java
 
 ## Enable Always On Profiling and Metrics and Add Resource Attributes to Spans
 

@@ -54,7 +54,7 @@ Copy and paste the following XML content. Edit the log location (/home/ubuntu/sp
 ```
 
 
-Next,edit the **pom.xml** file to add the Mapped Diagnostics Context dependency used to propagate trace data to the logger. 
+Next, edit the **pom.xml** file to add the Mapped Diagnostics Context dependency used to propagate trace data to the logger. 
 
 ```cmd
 vi /home/ubuntu/spring-petclinic/pom.xml
@@ -114,8 +114,9 @@ Replace the values for SPLUNK_HEC_URL and SPLUNK_HEC_TOKEN, then restart the col
 sudo systemctl restart splunk-otel-collector
 ```
 
-## Sample Code  
+## Sample Code adding Logs 
 
+Pet Clinic does not generate any application logs for user requests. So we add some code to generate log entries.
 
 Open the .../***src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java*** file.
 

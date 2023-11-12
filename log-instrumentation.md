@@ -12,7 +12,7 @@ We just need to create a file named logback.xml in the configuration folder:
 vi /home/ubuntu/spring-petclinic/src/main/resources/logback.xml
 ```
 
-Copy and paste the following XML content:
+Copy and paste the following XML content. Edit the log location (/home/ubuntu/spring-petclinic/spring-petclinic.log) as needed:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -73,16 +73,6 @@ Now we need to rebuild the application and run it again:
 
 ```cmd
 ./mvnw package -Dmaven.test.skip=true
-```
-
-Once the rebuild has completed we can then run the application again:
-
-```cmd
-sudo java \
--Dotel.service.name=$APP_NAME \
--Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.970 \
--Dsplunk.metrics.enabled=true \
--jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```
 
 
@@ -161,6 +151,24 @@ public ModelAndView showOwner(@PathVariable("ownerId") int ownerId) {
     return mav;
 }
 ```
+
+Now we need to rebuild the application and run it again:
+
+```cmd
+./mvnw spring-javaformat:apply
+./mvnw package -Dmaven.test.skip=true
+```
+
+Once the rebuild has completed we can then run the application again:
+
+```cmd
+sudo java \
+-Dotel.service.name=$APP_NAME \
+-Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.970 \
+-Dsplunk.metrics.enabled=true \
+-jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
+```
+
 
 ## View Logs in Log Observer
 

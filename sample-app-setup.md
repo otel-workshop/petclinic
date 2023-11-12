@@ -37,7 +37,7 @@ Next, run the maven command to compile/build/package PetClinic:
 Once the compilation is complete, you can run the application with the following command:
 The unique identity of an application (or service) is defined by its application (or service) name and the environment in which it is deployed. 
 
-The AppName and AppEnv values can be any alpha-numberic values but ensure that you identify them uniformly to all instrumentation - APM, RUM, Synthetics etc. For this application, we will use the following values 
+The APP_NAME and ENV_NAME values can be any alpha-numberic values but ensure that you identify them uniformly to all instrumentation - APM, RUM, Synthetics etc. For this application, we will use the following values, but again you can really use any value as long as they are unique (since this backend UI is shared among all workshop participants) and that you use it consistently throughout the rest of this workshop labs.
 
 ```cmd
     export APP_NAME=$(hostname)-petclinic

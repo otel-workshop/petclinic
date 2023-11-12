@@ -49,9 +49,10 @@ Resource attributes can also be added to every reported span. For example versio
 At a minimum, you should specify the **deployment.environment** resource attribute but others are optional.
 
 ```cmd
-java \
+sudo java \
 -Dotel.service.name=$APP_NAME \
 -Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
+-Dsplunk.metrics.enabled=true \
 -jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```
 

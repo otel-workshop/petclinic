@@ -7,7 +7,7 @@ To enable CPU and Memory Profiling on the application we can start the applicati
 Make sure the application is stopped and update the startup command to enable metrics and profiling.
 
 ```cmd
-java \
+sudo java \
 -Dotel.service.name=$APP_NAME \
 -Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
 -Dsplunk.profiler.enabled=true \

@@ -11,7 +11,11 @@ collect and send:
 * Host and application logs
 
 ## Install the Open Telemetry Collector
+Delete any existing collectors
 
+```cmd
+helm delete splunk-otel-collector
+```
 
 Update the command below replacing $ACCESS_TOKEN with your Splunk Observability Cloud Ingest Token. Also update $DEPLOYMENT_ENV with an appropriate environment name.
 

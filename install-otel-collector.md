@@ -12,24 +12,18 @@ collect and send:
 
 ## Install the Open Telemetry Collector
 
-Create the ACCESS_TOKEN and REALM environment variables to use in the proceeding OpenTelemetry Collector install
-command.
 
-For instance, if your realm is us1, you would type export REALM=us1 and for eu0 type export REALM=eu0 etc.
+Update the command below replacing $ACCESS_TOKEN with your Splunk Observability Cloud Ingest Token. Also update $DEPLOYMENT_ENV with an appropriate environment name.
 
-```cmd
-export ACCESS_TOKEN="<replace_with_O11y-Workshop-ACCESS_TOKEN>"
-export REALM="<replace_with_REALM>"
-```
-
-We can then go ahead and install the Collector. There are two additional parameters passed to the install script, they
-are --with-instrumentation and --deployment-environment. The --with-instrumentation option the installer will install
+The --with-instrumentation option the installer will install
 the agent from the Splunk distribution of OpenTelemetry Java, which is then loaded automatically when the PetClinic Java
 application starts up. No configuration required!
 
 ```cmd
+
 curl -sSL https://dl.signalfx.com/splunk-otel-collector.sh > /tmp/splunk-otel-collector.sh && \
-sudo sh /tmp/splunk-otel-collector.sh --with-instrumentation --deployment-environment prod --realm $REALM -- $ACCESS_TOKEN
+sudo sh /tmp/splunk-otel-collector.sh --realm us1 -- $ACCESS_TOKEN --mode agent --without-fluentd --with-instrumentation --deployment-environment $DEPLOYMENT_ENV
+
 ```
 
 On AWS/EC2 machines, we need to run and additional step to patch the collector to expose the hostname of the instance

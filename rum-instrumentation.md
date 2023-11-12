@@ -61,9 +61,7 @@ Run the <mark style="background-color: #FDFDC9">maven</mark> command to compile/
 ```cmd
 java \
 -Dotel.service.name=$APP_NAME \
--Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
--Dsplunk.profiler.enabled=true \
--Dsplunk.profiler.memory.enabled=true \
+-Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.970 \
 -Dsplunk.metrics.enabled=true \
 -jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```

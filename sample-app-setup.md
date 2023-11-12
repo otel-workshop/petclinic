@@ -45,13 +45,13 @@ The AppName and AppEnv values can be any alpha-numberic values but ensure that y
 ```
 
 Update APP_NAME and ENV_NAME in the below command with their chosen values
-Resource attributes can also be added to every reported span. For example version=0.314. A comma separated list of resource attributes can also be defined e.g. key1=val1,key2=val2.
+Resource attributes can also be added to every reported span. For example version=0.970. A comma separated list of resource attributes can also be defined e.g. key1=val1,key2=val2.
 At a minimum, you should specify the **deployment.environment** resource attribute but others are optional.
 
 ```cmd
 sudo java \
 -Dotel.service.name=$APP_NAME \
--Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.314 \
+-Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.970 \
 -Dsplunk.metrics.enabled=true \
 -jar target/spring-petclinic-*.jar --spring.profiles.active=mysql
 ```

@@ -65,7 +65,7 @@ Next, run the maven command to format and compile/build/package PetClinic
 Restart the PetClinic application.
 
 ```cmd
-java \
+sudo java \
 -Dotel.service.name=$APP_NAME \
 -Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.970 \
 -Dsplunk.metrics.enabled=true \

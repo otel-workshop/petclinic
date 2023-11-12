@@ -59,7 +59,7 @@ Run the <mark style="background-color: #FDFDC9">maven</mark> command to compile/
 ```
 
 ```cmd
-java \
+sudo java \
 -Dotel.service.name=$APP_NAME \
 -Dotel.resource.attributes=deployment.environment=$ENV_NAME,version=0.970 \
 -Dsplunk.metrics.enabled=true \

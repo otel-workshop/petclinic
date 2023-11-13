@@ -41,7 +41,7 @@ The APP_NAME and ENV_NAME values can be any alpha-numberic values but ensure tha
 
 ```cmd
     export APP_NAME=$(hostname)-petclinic
-    export ENV_NAME=$(hostname)-env
+    export ENV_NAME=$(hostname)-fe
 ```
 
 Update APP_NAME and ENV_NAME in the below command with their chosen values

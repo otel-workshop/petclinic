@@ -29,6 +29,10 @@ To manually instrument your application, add the open telemetry SDK dependency t
 
 Open the .../***src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java*** file.
 
+```cmd
+vi src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java
+```
+
 Add this import statement (import statements are usually found at the top of the java source file)
 ```java
 import io.opentelemetry.api.trace.Span;

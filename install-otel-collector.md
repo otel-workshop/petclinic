@@ -30,12 +30,6 @@ sudo sh /tmp/splunk-otel-collector.sh --realm us1 -- $ACCESS_TOKEN --mode agent 
 
 ```
 
-On AWS/EC2 machines, we need to run and additional step to patch the collector to expose the hostname of the instance
-
-```cmd
-sudo sed -i 's/gcp, ecs, ec2, azure, system/system, gcp, ecs, ec2, azure/g' /etc/otel/collector/agent_config.yaml
-```
-
 Restart the collector
 
 ```cmd
